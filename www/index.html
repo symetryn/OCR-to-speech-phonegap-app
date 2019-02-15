@@ -1,0 +1,214 @@
+<!doctype html>
+<!--
+  Material Design Lite
+  Copyright 2015 Google Inc. All rights reserved.
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+      https://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <title>Material Design Lite</title>
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'"> -->
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="images/android-desktop.png">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Material Design Lite">
+    <link rel="apple-touch-icon-precomposed" href="images/ios-desktop.png">
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
+    <meta name="msapplication-TileColor" content="#3372DF">
+
+    <link rel="shortcut icon" href="images/favicon.png">
+
+    <!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
+    <!--
+    <link rel="canonical" href="http://www.example.com/">
+    -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="css/material.cyan-light_blue.min.css">
+    <link rel="stylesheet" href="styles.css">
+    
+    <style>
+    </style>
+  </head>
+  <body>
+      <script type="text/javascript" charset="utf-8" src="cordova.js"></script> 
+      <script type="text/javascript" src="js/jquery.js"></script>
+    
+     
+      <!-- Always shows a header, even in smaller screens. -->
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <header class="mdl-layout__header">
+      <div class="mdl-layout__header-row" style="text-align:center;margin:auto;">
+        <!-- Title -->
+        <span class="mdl-layout-title" style="margin-left: -20%" >Swift Reader</span>
+        <!-- Add spacer, to align navigation to the right -->
+        <div class="mdl-layout-spacer"></div>
+        <!-- Navigation. We hide it in small screens. -->
+       
+      </div>
+    </header>
+    <div class="mdl-layout__drawer">
+      <span class="mdl-layout-title" >Menu</span>
+      <nav class="mdl-navigation">
+        <a href="index.html"  class="mdl-navigation__link is-active";>Home</a>
+        <a class="mdl-navigation__link" href="books.html">Books</a>
+        <a class="mdl-navigation__link" href="store.html">Store</a>
+      </nav>
+    </div>
+    <main class="mdl-layout__content">
+          <div class="mdl-grid" style="justify-content: center;">
+              <div class="mdl-cell mdl-cell--12-col mdl-cell--4-col-phone" style="margin:auto;text-align:center;width:100%;padding:12px"><button id="SinglePicture" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" style="width:100%;">Scan</button></div>
+           
+              <div class="mdl-cell mdl-cell--12-col mdl-cell--4-col-phone" style="margin:auto;text-align:center;width:100%;padding:12px;padding-top:0px;"><button id="TakePicture" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" style="width:100%;">Create Book</button></div>
+           
+              <div class="mdl-cell mdl-cell--12-col mdl-cell--4-col-phone" style="margin:auto;text-align:center;width:100%;padding:12px;padding-top:0px;"><button id="Listen" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"  style="width:100%;">Read</button></div>
+              
+              <div class="mdl-cell mdl-cell--12-col mdl-cell--4-col-phone" style="margin:auto;text-align:center;width:100%;padding:12px;padding-top:0px;"><button id="Stop" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"  style="width:100%;">Stop</button></div>
+              
+              <div class="mdl-cell mdl-cell--12-col mdl-cell--4-col-phone" 
+              style="margin:auto;text-align:center;width:100%;padding:12px;padding-top:0px;padding-bottom: 0px">
+              
+              <div class = "mdl-textfield mdl-js-textfield" style="width: 100%;">
+                <textarea class = "mdl-textfield__input" type = "text" id = "imageText" style="width: 100%;height:45vh;"></textarea>
+                <label class = "mdl-textfield__label" for = "imageText">Scanned Text</label>
+             </div>
+            </div>
+            <div class="mdl-cell mdl-cell--12-col mdl-cell--4-col-phone" style="margin:auto;text-align:center;width:100%;padding:12px;padding-top:0px;"><button id="saveBook" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"  style="width:100%;">Save Book</button></div>
+            <div class="mdl-cell mdl-cell--12-col mdl-cell--4-col-phone" style="margin:auto;text-align:center;width:100%;padding:12px;padding-top:0px;"><button id="clear" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"  style="width:100%;">Clear</button></div>
+            
+               </div>
+    </main>
+  </div>
+    <script>
+      var imageText;
+      //event listener for all buttons
+      document.getElementById("TakePicture").addEventListener("click", function(){
+        cameraTakePicture(true);
+      });
+      document.getElementById("Listen").addEventListener("click",function(){
+        Listen(document.getElementById("imageText").value);
+      });
+      document.getElementById("saveBook").addEventListener("click", saveBook); 
+      document.getElementById("Stop").addEventListener("click",function(){
+        Listen("");
+      });
+      document.getElementById("SinglePicture").addEventListener("click", function(){
+        cameraTakePicture(false);
+      });
+      document.getElementById("clear").addEventListener("click", function(){
+        document.getElementById("imageText").value="";
+      });
+
+      function cameraTakePicture(recall) { 
+        console.log("camera event called");
+        //calling camera plugin
+        navigator.camera.getPicture(onSuccess, onFail, {  
+        quality: 100, 
+      
+        correctOrientation: true     
+   });  
+   
+   function onSuccess(imageData) { 
+     // calling ocr plugin
+      textocr.recText(0, 1, imageData, onSuccess, onFail);
+      function onSuccess(recognizedText) {
+            console.log(recognizedText);
+            
+              this.imageText=+recognizedText;
+              document.getElementById("imageText").value+=recognizedText;
+              //calling camera plugin if camera started from create book
+              if(recall)
+              cameraTakePicture(true);
+            
+      }
+      function onFail(message) {
+            
+            alert('Failed because: ' + message);
+            
+      }
+}
+     
+   
+   function onFail(message) { 
+    console.log('failed because'+message);
+     
+   } 
+
+
+}
+  //calling text to speech plugin
+  function Listen(text){
+    TTS
+        .speak({
+            text: text,
+            locale: 'en-GB',
+            rate: 0.75
+        }).then(function () {
+            alert('success');
+        }, function (reason) {
+            alert(reason);
+        });
+  }
+      //inserts books into database
+      function saveBook(){
+      //calling database
+      var myDB = window.sqlitePlugin.openDatabase({name: "mySQLite.db", location: 'default'});
+      myDB.transaction(function(transaction) {
+      transaction.executeSql('CREATE TABLE IF NOT EXISTS books (id integer primary key, title text, desc text)', [],
+      function(txt, result) {
+   
+      var title=prompt("Please enter book title", );// insert title
+      var desc=document.getElementById('imageText').value;//get book text
+      if(desc.trim()==""&&desc.trim().length<=30)
+        alert('Invalid Book');
+      else{
+      if (title.trim()!="")
+      {
+      
+        myDB.transaction(function(transaction) {
+          var executeQuery = "INSERT INTO books (title, desc) VALUES (?,?)";
+          transaction.executeSql(executeQuery, [title,desc]
+          , function(tx, result) {
+            window.location.href="books.html";
+          },
+          function(error){
+          alert('Error occurred');
+          });
+          });
+        }
+      else{
+        alert("Invalid title!!")
+      }
+      }
+      },
+      function(error) {
+      alert("Error occurred while creating the table.");
+      });
+      });
+      }
+
+    </script>          
+    <script src="js/material.min.js.download"></script>
+  </body>
+</html>

@@ -1,0 +1,65 @@
+ #view-source {
+      position: fixed;
+      display: block;
+      right: 0;
+      bottom: 0;
+      margin-right: 40px;
+      margin-bottom: 40px;
+      z-index: 900;
+    }
+    img {
+  max-width: 100%;
+  height: auto;
+}
+
+.demo-grid {
+  background-color: gray;
+}
+
+.demo-grid .mdl-cell {
+  background-color: beige;
+ 
+}
+
+.mdl-card {
+  margin: 12px auto;
+  
+}
+
+.search-card {
+  min-height: 0;
+  margin: auto;
+  margin-top: 10px;
+  
+  width: 95%;
+  
+}
+  @media screen and (min-width: 768px) {
+    width: 650px;
+  }
+  
+  .search-card .mdl-textfield {
+    margin: auto;
+    padding: 5px;
+    width: 100%;
+   
+  }
+  
+  .search-card .mdl-textfield__input {
+    border: 0;
+  }
+  
+  .search-card .material-icons {
+    position: absolute;
+    font-size: 32px;
+    
+  }
+  
+  .search-card .material-icons + .mdl-textfield__input {
+    padding-left: 40px;
+    box-sizing: border-box;
+    font-size: 20px;
+    
+
+  }
+
